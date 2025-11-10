@@ -2,15 +2,19 @@
 const app2 = app; // continuation placeholder
 
 // === PUBLIC CONTENT: anyone can access ===
+// ✅ Public route: anyone can view all uploaded contents
 app.get('/api/contents', async (req, res) => {
   try {
-    const items = await Content.findAll({ order: [['createdAt', 'DESC']] });
+    const items = await Content.findAll({
+      order: [['createdAt', 'DESC']]
+    });
     res.json(items);
-  } catch (e) {
-    console.error(e);
-    res.status(500).json({ error: 'Error fetching content' });
+  } catch (err) {
+    console.error('Error fetching contents:', err);
+    res.status(500).json({ error: 'Failed to fetch contents' });
   }
 });
+
 
 // === Comments (optional: keep protected, or make public) ===
 // To allow comments without login, remove `authMiddleware` below.
