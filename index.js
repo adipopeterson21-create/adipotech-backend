@@ -110,7 +110,7 @@ app.post('/api/register', async (req, res) => {
   }
 });
 
-app.post('/api/login', async (req, res) => {
+/*app.post('/api/login', async (req, res) => {
   try {
     const { email, password } = req.body;
     const user = await User.findOne({ where: { email } });
@@ -129,7 +129,7 @@ app.post('/api/login', async (req, res) => {
     console.error(error);
     res.status(500).json({ error: 'Server error' });
   }
-});
+});*/
 
 // === Protected Routes ===
 app.get('/api/contents', authMiddleware, async (req, res) => {
