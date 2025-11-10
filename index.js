@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Serve frontend static files (useful if hosting both together)
-app.use('/', express.static(path.join(__dirname, '..', 'frontend')));
+//app.use('/', express.static(path.join(__dirname, '..', 'frontend')));
 
 // Environment variables and secrets
 const PORT = process.env.PORT || 3000;
@@ -254,8 +254,8 @@ app.post('/api/ai', authMiddleware, async (req, res) => {
 });
 
 // ===================== DEFAULT ROUTE =====================
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'frontend', 'index.html'));
+//app.get('/', (req, res) => {
+  //res.sendFile(path.join(__dirname, '..', 'frontend', 'index.html'));
 });
 
 // ===================== START SERVER =====================
