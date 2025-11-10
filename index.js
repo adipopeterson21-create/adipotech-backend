@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Environment variables and secrets
 const PORT = process.env.PORT || 3000;
-const JWT_SECRET = process.env.JWT_SECRET || 'supersecretkey';
+const JWT_SECRET = process.env.JWT_SECRET || 'ccaa4e1eed1698eec9645eaf680a62639c823e6e80f40037f66ab888db4af060';
 const stripe = stripeLib(process.env.STRIPE_SECRET_KEY || 'sk_test_xxx');
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
