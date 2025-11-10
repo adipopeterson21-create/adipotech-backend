@@ -256,7 +256,7 @@ app.post('/api/ai', authMiddleware, async (req, res) => {
 // ===================== DEFAULT ROUTE =====================
 //app.get('/', (req, res) => {
   //res.sendFile(path.join(__dirname, '..', 'frontend', 'index.html'));
-});
+
 
 // ===================== START SERVER =====================
 app.listen(PORT, () => {
