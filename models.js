@@ -9,9 +9,9 @@ if(DATABASE_URL && DATABASE_URL.trim() !== ''){
 }
 
 const User = sequelize.define('User', {
-  username: { type: DataTypes.STRING, unique: true },
-  email: { type: DataTypes.STRING, unique: true },
-  password: DataTypes.STRING,
+  username: { type: DataTypes.STRING, unique: false },
+  email: { type: DataTypes.STRING, unique: false },
+  password: DataTypes.STRING(200), allowNull: false },
   role: { type: DataTypes.STRING, defaultValue: 'user' },
   premium: { type: DataTypes.BOOLEAN, defaultValue: false }
 });
